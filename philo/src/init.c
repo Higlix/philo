@@ -36,10 +36,10 @@ void thread_init(t_data *data)
 
     i = -1;
     while (++i < data->nop)
-        pthread_create(data->philo[i].thread_id, NULL, 
+        pthread_create(&data->philo[i].thread_id, NULL, 
             &philo_loop, &data->philo[i]);
     pthread_create(&cycle_id, NULL, &philo_loop_master, data);
-    pthread_join(philo_loop, NULL);
+    pthread_join(cycle_id, NULL);
 }
 
 t_data *data_init(int argc, char ** argv)

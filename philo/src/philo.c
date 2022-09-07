@@ -14,7 +14,12 @@ void    *philo_loop_master(void *args)
         if (index == data->nop)
             index = 0;
         usleep(data->nop * 0.25 * 1000);
-        
+        if (get_time_ms() - data->philo[index].last_ate > data->ttd)
+        {
+            print_action(&data->philo[index], DEAD, get_time_ms());
+            data->running = false;
+            break ;
+        }
     }
 
     return (NULL);

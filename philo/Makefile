@@ -1,6 +1,6 @@
 NAME = philo
 INC = inc
-ARGS = 5 20 15 2 0
+ARGS = 5 15 15 2 0
 
 SRC = src/main.c \
 		src/perror.c \
@@ -10,7 +10,7 @@ SRC = src/main.c \
 		src/utils.c	\
 		src/action.c
 
-OBJ = obj/*
+OBJ = obj/*.o
 
 all: $(NAME)
 

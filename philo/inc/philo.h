@@ -33,7 +33,6 @@ typedef struct s_philo
     int l_fork;
     int r_fork;
     int eat_count;
-    uint64_t thread_id;
     struct s_philo *next;
     pthread_t thread_id;
     uint64_t last_ate;
