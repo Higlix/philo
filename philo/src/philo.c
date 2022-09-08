@@ -20,6 +20,7 @@ void    *philo_loop_master(void *args)
             data->running = false;
             break ;
         }
+        index++;
     }
     return (NULL);
 }

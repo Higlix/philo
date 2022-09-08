@@ -1,17 +1,28 @@
 #include "philo.h"
 
+void    detach_philo(t_data *data)
+{
+    int index;
+
+    index = 0;
+    while (index < data->nop)
+        pthread_detach(data->philo[index].thread_id);
+}
+
 void    free_philo(t_data *data)
 {
     int i;
 
     i = 0;
+    detach_philo(data);
     while (i < data->nop)
     {
         pthread_mutex_destroy(&data->fork[i]);
         i++;
     }
-    free(data->philo);
     pthread_mutex_destroy(&data->buffer);
+    free(data->philo);
+    free(data->fork);
     free(data);
 }
 
