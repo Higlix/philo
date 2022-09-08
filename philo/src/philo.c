@@ -21,7 +21,6 @@ void    *philo_loop_master(void *args)
             break ;
         }
     }
-
     return (NULL);
 }
 
@@ -49,7 +48,5 @@ void    *philo_loop(void *args)
         }
         p_sleep(philo, get_time_ms());
     }
-    
-
     return (NULL);
 }

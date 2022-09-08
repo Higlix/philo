@@ -65,6 +65,7 @@ void    p_drop_fork(t_philo *philo, uint64_t ms);
 void    p_eat(t_philo *philo, uint64_t ms);
 void    p_sleep(t_philo *philo, uint64_t ms);
 void    p_think(t_philo *philo, uint64_t ms);
+void    free_init(t_data *data);
 
 void    *philo_loop(void *args);
 void    *philo_loop_master(void *args);

@@ -1,5 +1,20 @@
 #include "philo.h"
 
+void    free_philo(t_data *data)
+{
+    int i;
+
+    i = 0;
+    while (i < data->nop)
+    {
+        pthread_mutex_destroy(&data->fork[i]);
+        i++;
+    }
+    free(data->philo);
+    pthread_mutex_destroy(&data->buffer);
+    free(data);
+}
+
 void    print_action(t_philo *philo, int key, uint64_t ms)
 {
     const char *states[6] = {pTHINKING, pEATING, pSLEEPING, pFORKING, pDEAD, NULL};
@@ -27,5 +42,5 @@ void    do_philo(int argc, char **argv)
     mutex_init(data);
     philo_init(data);
     thread_init(data);
-    //free_philo(data);
+    free_philo(data);
 }
