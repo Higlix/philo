@@ -1,0 +1,15 @@
+===== PHILOSOPHERS =====
+- Mutex
+- Race Condition
+- Pthreads
+
+TODO:
+1 - Understand everything before writing your own code
+2 - Clone other philos AND PHILO BONUSES (oh yes baby doing the bonus)
+
+COME UP WITH:
+1 - Cleaner structs
+2 - Philosopher fork algorithm  
+
+RULES:
+1 - No LIBFT (BULLSHIT)
